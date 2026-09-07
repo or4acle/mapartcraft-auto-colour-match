@@ -1,0 +1,52 @@
+{
+  "name": "mapartcraft-auto-colour-match",
+  "version": "1.0.0",
+  "description": "Tampermonkey userscript for automated color optimization on MapartCraft",
+  "main": "dist/mapartcraft-auto-colour-match.user.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch",
+    "lint": "eslint src/ tests/",
+    "format": "prettier --write src/ tests/",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "tampermonkey",
+    "userscript",
+    "mapartcraft",
+    "minecraft",
+    "color-optimization"
+  ],
+  "author": "or4acle",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "babel-jest": "^29.5.0",
+    "eslint": "^8.44.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "prettier": "^2.8.8"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/bootstrap.js",
+      "!src/worker.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  }
+}
