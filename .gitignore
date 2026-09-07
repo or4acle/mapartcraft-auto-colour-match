@@ -1,0 +1,14 @@
+node_modules/
+dist/
+build/
+.DS_Store
+*.log
+coverage/
+.env
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.eslintcache
+.prettierignore
